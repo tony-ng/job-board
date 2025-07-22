@@ -10,14 +10,19 @@ Run a MySQL Databaase using Docker
   docker compose up
 ```
 
-Make a .env file from .env.example
+Make a .env file from .env.example and generate encryption key
+
+```bash
+  cp .env.example .env
+  php artisan key:generate
+```
 
 Install dependencies and create the Job Board database
 
 ```bash
   composer install
   npm install
-  php artisan migrate
+  php artisan migrate --seed
 ```
 
 Start the local server
