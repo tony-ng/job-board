@@ -30,6 +30,9 @@
                         </li>
                     @else
                         <li>
+                            <a href="{{ route('register.create') }}">Register</a>
+                        </li>
+                        <li>
                             <a href="{{ route('auth.create') }}">Login</a>
                         </li>
                     @endauth
