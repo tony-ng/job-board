@@ -15,12 +15,7 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
-        User::factory()->create([
-            'name' => 'Tony Ng',
-            'email' => 'kakuenng@gmail.com',
-        ]);
-        
+    {   
         User::factory(300)->create();
 
         $users = User::all()->shuffle();
