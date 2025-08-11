@@ -7,7 +7,7 @@ use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\MyJobController;
-use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\UserController;
 use App\Models\JobApplication;
 use App\Models\Task;
 use Illuminate\Http\Response;
@@ -18,7 +18,7 @@ Route::get('/', function(){
     return to_route('jobs.index');
 });
 
-Route::resource('register', RegisteredUserController::class)
+Route::resource('register', UserController::class)
     ->only(['create', 'store']);
 
 Route::get('login', function(){

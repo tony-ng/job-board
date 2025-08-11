@@ -18,7 +18,7 @@
                     <input type="checkbox" name="remember" id="remember" class="round-md border-1 border-slate-400" />
                     <label for="remember">Remember me</label>
                 </div>
-                <a href="{{ route('auth.store') }}" class="text-indigo-600 hover:underline">Forget Password?</a>
+                {{-- <a href="{{ route('auth.store') }}" class="text-indigo-600 hover:underline">Forget Password?</a> --}}
             </div>
             <x-button class="w-full bg-green-300 hover:bg-green-500">Login</x-button>
         </form> 
