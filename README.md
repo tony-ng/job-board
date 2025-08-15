@@ -1,6 +1,6 @@
 # Job Board Application
 
-This is a personal project in which employers can create and manage their job posts. Authenticated users can apply for the jobs and then manage their job applications. Laravel 11, Blade templates, Tailwind CSS and Alpine.js are used to develop the system.
+This is a personal project in which employers can create and manage their job posts. Authenticated users can apply for the jobs and then manage their job applications. Laravel 12, Blade templates, Tailwind CSS and Alpine.js are used to develop the system.
 
 ## Run Locally
 
