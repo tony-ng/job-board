@@ -21,6 +21,15 @@ Route::get('/', function(){
 Route::resource('register', UserController::class)
     ->only(['create', 'store']);
 
+Route::middleware('auth')->get('/email/verify', [UserController::class, 'EmailVerificationNotice'])
+    ->name('verification.notice');
+
+Route::middleware(['auth', 'throttle:6,1'])->post('/email/verification-notification', [UserController::class, 'sendEmailVerification'])
+    ->name('verification.send');
+
+Route::middleware(['auth', 'signed'])->get('/email/verify/{id}/{hash}', [UserController::class, 'verifyEmail'])
+    ->name('verification.verify');
+
 Route::get('login', function(){
     return to_route('auth.create');
 })->name('login');
@@ -38,7 +47,7 @@ Route::delete('logout', function(){
 Route::delete('auth', [AuthController::class, 'destroy'])
     ->name('auth.destroy');
 
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('jobs.applications', JobApplicationController::class)
         ->only(['create', 'store']);
 
