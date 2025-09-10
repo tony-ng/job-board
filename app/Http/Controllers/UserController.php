@@ -33,7 +33,11 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|min:2|max:255',
             'email' => 'required|email|unique:users',
-            'password' => ['required', 'confirmed', Password::defaults()]
+            'password' => ['required', 'confirmed', Password::defaults()],
+            'captcha' => 'required|captcha'
+        ], [
+            'captcha.required' => 'Captcha is required',
+            'captcha.captcha' => 'Captcha is invalid',
         ]);
 
         $user = User::create([
@@ -47,6 +51,10 @@ class UserController extends Controller
         // event(new Registered($user));
 
         return redirect()->route('verification.notice');
+    }
+
+    public function fetchCaptcha(){
+        return response()->json(['captcha'=> captcha_img()]);
     }
 
     public function EmailVerificationNotice(){

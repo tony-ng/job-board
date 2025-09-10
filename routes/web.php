@@ -21,6 +21,9 @@ Route::get('/', function(){
 Route::resource('register', UserController::class)
     ->only(['create', 'store']);
 
+Route::get('fetch-captcha', [UserController::class, 'fetchCaptcha'])
+    ->name('fetch.captcha');
+
 Route::middleware('auth')->get('/email/verify', [UserController::class, 'EmailVerificationNotice'])
     ->name('verification.notice');
 
