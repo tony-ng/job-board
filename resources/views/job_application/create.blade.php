@@ -9,7 +9,7 @@
             @csrf
             <div class="mb-8">
                 <x-label for="expected_salary" :required="true">Expected Salary</x-label>
-                <x-text-input name="expected_salary" type="number" />
+                <x-text-input name="expected_salary" type="number" :value="old('expected_salary')" />
             </div>
             <div class="mb-8">
                 <x-label for="cv" :required="true">Upload CV</x-label>

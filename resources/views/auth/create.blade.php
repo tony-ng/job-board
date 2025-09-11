@@ -7,7 +7,7 @@
             @csrf
             <div class="mb-4">
                 <x-label for="email" :required="true">Email</x-label>
-                <x-text-input name="email" class="mb-4" />
+                <x-text-input name="email" class="mb-4" :value="old('email')" />
             </div>
             <div class="mb-4">
                 <x-label for="password" :required="true">Password</x-label>

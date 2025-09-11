@@ -9,19 +9,19 @@
             <div class="mb-4 grid grid-cols-2 gap-4">
                 <div>
                     <x-label for="title" :required="true">Title</x-label>
-                    <x-text-input name="title" />
+                    <x-text-input name="title" :value="old('title')" />
                 </div>
                 <div>
                     <x-label for="location" :required="true">Location</x-label>
-                    <x-text-input name="location" />
+                    <x-text-input name="location" :value="old('location')" />
                 </div>
                 <div class="col-span-2">
                     <x-label for="salary" :required="true">Salary</x-label>
-                    <x-text-input name="salary" type="number" />
+                    <x-text-input name="salary" type="number" :value="old('salary')" />
                 </div>
                 <div class="col-span-2">
                     <x-label for="description" :required="true">Description</x-label>
-                    <x-text-input name="description" type="textarea" />
+                    <x-text-input name="description" type="textarea" :value="old('description')" />
                 </div>
                 <div>
                     <x-label for="experience" :required="true">Experience</x-label>

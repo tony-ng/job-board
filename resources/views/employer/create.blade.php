@@ -7,7 +7,7 @@
             @csrf
             <div class="mb-8">
                 <x-label for="company_name" :required="true">Company Name</x-label>
-                <x-text-input name="company_name" />
+                <x-text-input name="company_name" :value="old('company_name')" />
             </div>
             <x-button class="w-full">Create</x-button>
         </form>

@@ -21,19 +21,19 @@
             @csrf
             <div class="mb-4">
                 <x-label for="name" :required="true">Name</x-label>
-                <x-text-input name="name" class="mb-4" />
+                <x-text-input name="name" :value="old('name')"/>
             </div>
             <div class="mb-4">
                 <x-label for="email" :required="true">Email</x-label>
-                <x-text-input name="email" class="mb-4" />
+                <x-text-input name="email" :value="old('email')"/>
             </div>
             <div class="mb-4">
                 <x-label for="password" :required="true">Password</x-label>
-                <x-text-input name="password" type="password" class="mb-4" />
+                <x-text-input name="password" type="password" />
             </div>
             <div class="mb-4">
                 <x-label for="password_confirmation" :required="true">Retype Password</x-label>
-                <x-text-input name="password_confirmation" type="password" class="mb-4" />
+                <x-text-input name="password_confirmation" type="password" />
             </div>
             <div class="mb-4"">
                 <div class="flex items-start gap-2">
