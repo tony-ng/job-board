@@ -12,7 +12,7 @@
         <div class="w-full flex items-center justify-between">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
-                <x-button class="w-1/3 bg-green-300 hover:bg-green-500">
+                <x-button class="bg-green-300 hover:bg-green-500">
                     Resend Verification Email
                 </x-button>
             </form>
@@ -20,7 +20,7 @@
             <form method="POST" action="{{ route('auth.destroy') }}">
                 @csrf
                 @method('DELETE')
-                <x-button class="w-1/3 bg-green-300 hover:bg-green-500">
+                <x-button class="bg-green-300 hover:bg-green-500">
                     Logout
                 </x-button>
             </form>
