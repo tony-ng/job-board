@@ -48,7 +48,7 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        // event(new Registered($user));
+        event(new Registered($user));
 
         return redirect()->route('verification.notice');
     }
@@ -66,7 +66,7 @@ class UserController extends Controller
             return redirect('/');
         }
         
-        // $request->user()->sendEmailVerificationNotification();
+        $request->user()->sendEmailVerificationNotification();
 
         return back()->with('status', 'verification-link-sent');
     }
