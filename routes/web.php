@@ -18,7 +18,7 @@ Route::get('/', function(){
     return to_route('jobs.index');
 });
 
-Route::resource('register', UserController::class)
+Route::middleware('guest')->resource('register', UserController::class)
     ->only(['create', 'store']);
 
 Route::get('fetch-captcha', [UserController::class, 'fetchCaptcha'])
@@ -40,7 +40,7 @@ Route::get('login', function(){
 Route::resource('jobs', JobController::class)
     ->only(['index', 'show']);
 
-Route::resource('auth', AuthController::class)
+Route::middleware('guest')->resource('auth', AuthController::class)
     ->only(['create', 'store']);
 
 Route::delete('logout', function(){

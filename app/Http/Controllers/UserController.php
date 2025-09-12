@@ -18,8 +18,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        Gate::authorize('create', User::class);
-
         return view('register.create');
     }
 
@@ -27,9 +25,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        Gate::authorize('create', User::class);
-       
+    {       
         $validatedData = $request->validate([
             'name' => 'required|string|min:2|max:255',
             'email' => 'required|email|unique:users',
