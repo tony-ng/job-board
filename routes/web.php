@@ -50,6 +50,18 @@ Route::delete('logout', function(){
 Route::delete('auth', [AuthController::class, 'destroy'])
     ->name('auth.destroy');
 
+Route::middleware('guest')->get('forgot-password', [AuthController::class, 'requestPasswordReset'])
+    ->name('password.request');
+
+Route::middleware('guest')->post('forgot-password', [AuthController::class, 'sendPasswordReset'])
+    ->name('password.email');
+
+Route::middleware('guest')->get('reset-password/{token}', [AuthController::class, 'showResetPassword'])
+    ->name('password.reset');
+
+Route::middleware('guest')->post('reset-password', [AuthController::class, 'resetPassword'])
+    ->name('password.update');
+
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('jobs.applications', JobApplicationController::class)
         ->only(['create', 'store']);

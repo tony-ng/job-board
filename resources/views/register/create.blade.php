@@ -35,7 +35,7 @@
                 <x-label for="password_confirmation" :required="true">Retype Password</x-label>
                 <x-text-input name="password_confirmation" type="password" />
             </div>
-            <div class="mb-4"">
+            <div class="mb-4">
                 <div class="flex items-start gap-2">
                     <div id="captcha-img" class="mb-2">{!! captcha_img() !!}</div>
                     <div class="relative">
